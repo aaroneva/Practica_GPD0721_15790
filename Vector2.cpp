@@ -9,6 +9,10 @@ void Vector2::SetY(float y)
 {
     this->y = y;
 }
+void Vector2::SetZ(float z) 
+{
+    this->z = z;
+}
 
 float Vector2::GetX()
 {
@@ -20,6 +24,12 @@ float Vector2::GetY()
     return y;
 }
 
+float Vector2::GetZ()
+{
+    return z;
+}
+
+
 Vector2 Vector2::operator+(Vector2 a)
 {
     Vector2 suma;
@@ -28,12 +38,14 @@ Vector2 Vector2::operator+(Vector2 a)
     return suma;
 }
 
-Vector2 Vector2::operator-(Vector2 a)
+
+Vector2 Vector2::operator-(Vector2 r)
 {
-    Vector2 res;
-    res.SetX(x - a.GetX());
-    res.SetY(y - a.GetY());
-    return res;
+    Vector2 rest;
+    rest.SetX(x - r.GetX());
+    rest.SetY(y - r.GetY());
+    rest.SetZ(z - r.GetZ());
+    return rest;
 }
 
 Vector2 Vector2::operator*(float a) 
@@ -62,13 +74,23 @@ Vector2 Vector2::Unit()
     unit.SetY(y/Norm());
     return unit;
 }
-Vector2::Vector2() {
+Vector2::Vector2() 
+{
     x = 0;
     y = 0;
 }
-Vector2::Vector2(float x, float y) {
+
+Vector2::Vector2(float x, float y) 
+{
     this->x = x;
     this->y = y;
+}
+
+Vector2::Vector2(float x, float y, float z) 
+{
+    this->x = x;
+    this->y = y;
+    this->z = z;
 }
 
 

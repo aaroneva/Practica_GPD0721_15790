@@ -1,6 +1,8 @@
 #include "Spawner.h"
 #include "Enemy.h"
 
+	Enemy* enemy = new Enemy;
+
 Spawner::Spawner(int widthScreen, int heightScreen)
 {
 	this->widthScreen = widthScreen;
@@ -9,7 +11,6 @@ Spawner::Spawner(int widthScreen, int heightScreen)
 
 void Spawner::CreateEnemy()
 {
-	Enemy* enemy = new Enemy;
 	enemy->Init(rand()%widthScreen, rand()%heightScreen);
 	enemies.push_back(enemy);
 }
@@ -23,4 +24,6 @@ void Spawner::EnemySpawner(double deltaTime)
 		time = 0;
 	}
 }
+
+
 

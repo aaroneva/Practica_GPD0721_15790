@@ -42,31 +42,27 @@ void Window::Input(int& directionX, int& directionY, bool& click, int& mouseX, i
     directionY = 0;
     velocidadx = 0;
     velocidady = 0;
-    if (keys[SDL_SCANCODE_UP])
+    if (keys[SDL_SCANCODE_W])
     {
-        /*velocidady += aceleraciony * (1 / 60);
-        directionY = velocidady * (1 / 60);*/
+      
         directionY = 1;
-        //std::cout << "Se presiono arriba";
+        
     }
-    else if (keys[SDL_SCANCODE_DOWN])
+    else if (keys[SDL_SCANCODE_S])
     {
-        /*velocidady += aceleraciony * (1 / 60);
-        directionY = -velocidady * (1 / 60);*/
+        
         directionY = -1;
-        //std::cout << "Se presiono abajo";
+        
     }
-    if (keys[SDL_SCANCODE_RIGHT])
+    if (keys[SDL_SCANCODE_D])
     {
-        /*velocidadx += aceleracionx * (1 / 60);
-        directionX = velocidadx * (1 / 60);*/
+        
         directionX = 1;
 
     }
-    else if (keys[SDL_SCANCODE_LEFT])
+    else if (keys[SDL_SCANCODE_A])
     {
-        /*velocidadx += aceleracionx * (1 / 60);
-        directionX = -velocidadx * (1 / 60);*/
+     
         directionX = -1;
 
     }
@@ -79,8 +75,8 @@ void Window::Input(int& directionX, int& directionY, bool& click, int& mouseX, i
         if (e.button.type == SDL_MOUSEBUTTONDOWN)
         {
             click = true;
-            std::cout << e.button.x << std::endl;
-            std::cout << e.button.y << std::endl;
+            //std::cout << e.button.x << std::endl;
+            //std::cout << e.button.y << std::endl;
         }
         else
         {

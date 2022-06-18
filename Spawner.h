@@ -15,6 +15,6 @@ public:
 	Spawner(int widthScreen, int heightScreen);
 	void EnemySpawner(double deltaTime);
 	void CreateEnemy();
-
+	void DeleteEnemy();
 };
 

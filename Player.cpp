@@ -67,5 +67,43 @@ void Player::acel(int velocidadx_,int aceleracionx_, int velocidady_, int aceler
 		position.x -= velocidad.x * deltaTime;
 
 	}
+
+
 }
+
+
+bool Player::Colision(int posEnemyX, int posEnemyY, int enemyWidth, int enenmyHeight) 
+{
+	int xPlayerP = position.x + player.GetWidth();
+	int xEnemyP = posEnemyX + enemyWidth;
+	int yPlayerP = position.y + player.GetHeight();
+	int yEnemyP = posEnemyY + enenmyHeight;
+
+	if (position.x < xEnemyP && xPlayerP > posEnemyX && position.y < yEnemyP && yPlayerP > posEnemyY) 
+	{	
+		return true;
+	}
+	return false;
+}
+
+
+
+bool Player::CheckColisions(std::vector <Enemy*> enemies)
+{
+	for(auto enemy:enemies)
+	{
+		if (Colision(enemy->position.x, enemy->position.y, enemy->GetWidth(), enemy->GetHeigth())) 
+		{
+			Pegaron = true;
+			energy-=5;
+			std::cout << energy << "\n";
+			return true;
+			//eliminar enemigo
+		}
+	}
+	return false;
+	Pegaron = false;
+}
+
+
 
